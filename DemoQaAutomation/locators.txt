@@ -1,0 +1,56 @@
+
+locators
+
+
+1) id 			= driver.findElement(By.id (<element ID>))
+2) name			= driver.findElement(By.name (<element name>))	
+3) class		= driver.findElement(By.className (<element class>))
+4) TagName		= driver.findElement(By.tagName (<htmltagname>))
+5) linkText		= driver.findElement(By.linkText (<linktext>))		
+6) Partial linkText	= driver.findElement(By.partialLinkText (<linktext>))
+
+
+ Difference between linkText and partial LinkText:
+
+In linkText we have to pass complete link text of the link and 
+in partial LinkText we no need to pass complete link text we can just pass 
+portion of linktext and we can find the link and perform some action.
+
+
+7) CSS Selector
+
+CSS Selectors in Selenium are used to identify an element 
+based on a combination of HTML tag, id, class, and attributes.
+
+CSS Selector - Tag and class
+driver.findElement(By.cssSelector.(".className")).sendkeys("VSTL");
+driver.findElement(By.cssSelector.("tagName.className")).sendkeys("VSTL");
+
+CSS Selector - Tag and Attribute
+driver.findElement(By.cssSelector.("[attributeName= attributeValue]")).sendkeys("VSTL");
+driver.findElement(By.cssSelector.("tagName.[attributeName= attributeValue]")).sendkeys("VSTL");
+
+CSS Selector - Tag and Id
+driver.findElement(By.cssSelector.("#idName")).sendkeys("VSTL");
+driver.findElement(By.cssSelector.("tagName#idName")).sendkeys("VSTL");
+
+CSS Selector - Tag, class and Attribute
+driver.findElement(By.cssSelector.("tagName.className[attributeName= attributeValue]")).sendkeys("VSTL");
+
+8)xpath
+
+Absolute Xpath / full Xpath 
+Relative Xpath / Partial Xpath
+	
+	syntax: //tagname[@attributename='value'] OR //*[@attributename='value']
+
+ contains() :
+it check for value is present or not and  it will use for dynamic xpath
+syntax:  //tagname[contains(@attributeName,'value')] 
+ 
+ starts-with() :
+This method checks the starting text of an attribute and finds elements whose attribute changes dynamically.
+syntax:  //tagnamest[starts-with(@attributeName,'value')] 
+ 
+ text() :
+syntax:  //tagname[text() = 'text_value']
